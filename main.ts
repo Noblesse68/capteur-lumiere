@@ -1,3 +1,22 @@
+let t = 0
 basic.forever(function () {
-    basic.showNumber(input.lightLevel())
+    t = input.lightLevel()
+    if (t >= 128) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+    }
+    if (t <= 128) {
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # .
+            # # . . .
+            # . . . .
+            `)
+    }
 })
